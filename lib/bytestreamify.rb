@@ -4,7 +4,7 @@ end
 
 module ByteStreamify
   def self.inputstream(from, opts = {})
-    gzip = opts{:gz}
+    gzip = opts[:gz]
     stream = nil
     if from.is_a? Java::JavaIO::InputStream
       stream = from
@@ -24,7 +24,7 @@ module ByteStreamify
   
   def self.outputstream(from, opts={})
     stream = nil
-    gzip = opts{:gz}
+    gzip = opts[:gz]
     if from.is_a? Java::JavaIO::OutputStream
       stream = from
     elsif from.is_a? String
