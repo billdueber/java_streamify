@@ -1,10 +1,10 @@
 unless defined? JRUBY_VERSION
-  raise "ByteStreamify only works under JRUBY"
+  raise "JavaStreamify only works under JRUBY"
 end
 
-module ByteStreamify
+module JavaStreamify
   def self.inputstream(from, opts = {})
-    gzip = opts[:gz]
+    gzip = opts[:gz] || opts[:gzip]
     stream = nil
     if from.is_a? Java::JavaIO::InputStream
       stream = from
@@ -24,7 +24,7 @@ module ByteStreamify
   
   def self.outputstream(from, opts={})
     stream = nil
-    gzip = opts[:gz]
+    gzip = opts[:gz] || opts[:gzip]
     if from.is_a? Java::JavaIO::OutputStream
       stream = from
     elsif from.is_a? String

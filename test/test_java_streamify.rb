@@ -1,6 +1,6 @@
 require 'helper'
 
 
-describe Bytestreamify do
+describe JavaStreamify do
   
 end

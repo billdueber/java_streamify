@@ -13,7 +13,7 @@ require 'minitest/benchmark'
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-require 'bytestreamify'
+require 'java_streamify'
 
 class MiniTest::Unit::TestCase
 end
